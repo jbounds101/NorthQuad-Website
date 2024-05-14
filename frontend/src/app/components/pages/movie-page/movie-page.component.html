@@ -1,0 +1,14 @@
+<p>movie-page works!</p>
+
+<div *ngIf="movie" class="container">
+    <img [src]="movie.imagePath" [alt]="movie.name"/>
+  
+    <div class="details">
+      <div class="header">
+        <span class="name">
+          {{movie.name}}
+        </span>
+      </div>
+
+    </div>
+  </div>

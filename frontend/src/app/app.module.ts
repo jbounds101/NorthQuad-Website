@@ -8,13 +8,15 @@ import { HeaderComponent } from './components/partials/header/header.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MoviePageComponent } from './components/pages/movie-page/movie-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
     HeaderComponent,
-    LoginPageComponent
+    LoginPageComponent,
+    MoviePageComponent
   ],
   imports: [
     BrowserModule,

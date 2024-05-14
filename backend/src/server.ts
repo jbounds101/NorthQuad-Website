@@ -14,6 +14,12 @@ app.get('/api/movies', (req, res) => {
     res.send(MOVIES);
 });
 
+app.get('/api/movies/:movieId', (req, res) => {
+    const movieId = req.params.movieId;
+    const movie = MOVIES.find(movie => movie.id == movieId);
+    res.send(movie);
+});
+
 app.post('/api/users/login', (req, res) => {
     const {email, password} = req.body; // This destructures the request into objects
     const user = SAMPLE_USERS.find(user => user.email === email && user.password === password);

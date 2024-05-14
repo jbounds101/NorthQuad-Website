@@ -25,7 +25,7 @@ export class UserService {
 				},
 				error: (errorResponse) => {
 					// User login was not succesful
-					// TODO handle this
+					alert('User not available!');
 				}
 			})
 		);
