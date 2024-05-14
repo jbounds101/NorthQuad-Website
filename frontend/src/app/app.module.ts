@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/pages/home-page/home-page.component';
 import { HeaderComponent } from './components/partials/header/header.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     provideClientHydration()
