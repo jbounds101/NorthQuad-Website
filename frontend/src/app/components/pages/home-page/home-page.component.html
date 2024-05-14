@@ -1,1 +1,23 @@
 <p>home-page works!</p>
+<ul>
+  <li *ngFor="let movie of movies">
+    <a routerLink="/movie/{{movie.id}}">
+      <img src="{{movie.imagePath}}" alt="{{movie.name}}"/>
+      <div class="content">
+        <div class="name">
+          {{movie.name}}
+        </div>
+
+        <div class="footer">
+          <div class="director">
+            {{movie.director}}
+          </div>
+
+          <div class="releaseDate">
+            {{movie.releaseYear}}
+          </div>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
