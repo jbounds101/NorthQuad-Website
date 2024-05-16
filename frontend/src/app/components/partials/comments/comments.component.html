@@ -1,5 +1,12 @@
 <div class="comments">
+  <div class="comments-title">
+    Comments
+  </div>
   <div class="comment-form-tile">Write comment</div>
+  <app-comment-form 
+    submitLabel="Write" 
+    (handleSubmit)="addComment($event)">
+  </app-comment-form>
   <div class="comments-container">
     <ul>
       <app-comment *ngFor="let comment of comments" 

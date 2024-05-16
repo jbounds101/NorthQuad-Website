@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { COMMENTS, MOVIES, SAMPLE_USERS } from './data';
+import { dataComments, dataMovies, dataUsers, findHighestId } from './data';
 import jwt from 'jsonwebtoken';
 
 const app = express();
@@ -10,14 +10,17 @@ app.use(cors( { // Allows cross reference requests
     origin:['http://localhost:4200'] 
 }));
 
+let highestUserId:number = findHighestId(dataUsers);
+let highestCommentId:number = findHighestId(dataComments);
+
 // Movies
 app.get('/api/movies', (req, res) => {
-    res.send(MOVIES);
+    res.send(dataMovies);
 });
 
 app.get('/api/movies/:movieId', (req, res) => {
     const movieId = req.params.movieId;
-    const movie = MOVIES.find(movie => movie.id == movieId);
+    const movie = dataMovies.find(movie => movie.id == movieId);
     res.send(movie);
 });
 // ---
@@ -25,7 +28,7 @@ app.get('/api/movies/:movieId', (req, res) => {
 /// Users
 app.post('/api/users/login', (req, res) => {
     const {email, password} = req.body; // This destructures the request into objects
-    const user = SAMPLE_USERS.find(user => user.email === email && user.password === password);
+    const user = dataUsers.find(user => user.email === email && user.password === password);
     
     if (user) {
         res.send(generateTokenResponse(user)); // User found, send them a token
@@ -36,7 +39,6 @@ app.post('/api/users/login', (req, res) => {
 
 app.post('/api/users/register', (req, res) => {
     const {name, email, password} = req.body;
-    
 });
 
 const generateTokenResponse = (user:any) => {
@@ -48,19 +50,34 @@ const generateTokenResponse = (user:any) => {
 
 // Comments
 app.get('/api/comments', (req, res) => {
-    res.send(COMMENTS);
+    res.send(dataComments);
 });
 
 app.get('/api/comments/movies/:movieId', (req, res) => {
     const movieId = req.params.movieId;
-    const comments = COMMENTS.filter(comment => comment.movieId == movieId);
+    const comments = dataComments.filter(comment => comment.movieId == movieId);
     res.send(comments);
 });
 
 app.get('/api/comments/users/:userId', (req, res) => {
     const userId = req.params.userId;
-    const comments = COMMENTS.filter(comment => comment.userId == userId);
+    const comments = dataComments.filter(comment => comment.userId == userId);
     res.send(comments);
+});
+
+app.post('/api/comments', (req, res) => {
+    // Here would be a good place rto validate the request with the userToken
+    const {body, userName, userId, movieId} = req.body;
+    highestCommentId++;
+    const newComment = {
+        id: highestCommentId,
+        body: body,
+        userName: userName,
+        userId: userId,
+        movieId: movieId
+    };
+    dataComments.push(newComment);
+    res.status(201).send(newComment);
 });
 // ---
 
@@ -68,3 +85,4 @@ const PORT = 5000;
 app.listen(PORT, () => {
     console.log('Server running on http://localhost:' + PORT);
 });
+

@@ -13,6 +13,7 @@ import { Comment } from '../../../shared/models/Comment';
 export class CommentsComponent {
     user!:User;
     comments!:Comment[];
+    movieId!:string;
 
     constructor(activatedRoute:ActivatedRoute,
         private userService:UserService, 
@@ -22,6 +23,7 @@ export class CommentsComponent {
         })
         activatedRoute.params.subscribe((params) => {
             if (params['id']) {
+                this.movieId = params['id'];
                 commentService.getCommentsByMovieId(params['id']).subscribe((serverComments) => {
                     this.comments = serverComments;
                 })
@@ -35,6 +37,13 @@ export class CommentsComponent {
 
     isUserAuth(userId:string):boolean {
         return this.isAuth && userId === this.user.id;
+    }
+
+    addComment(text:string) {
+        console.log("here");
+        this.commentService.createComment(text, this.user.name, this.user.id, this.movieId).subscribe(createdComment => {
+            this.comments = [...this.comments, createdComment]; // Add the new comment to the page
+        });
     }
     
 }

@@ -22,4 +22,14 @@ export class CommentService {
     getCommentsByUserId(userId:string):Observable<Comment[]> {
         return this.http.get<Comment[]>(COMMENTS_URL_BY_USER_ID + userId)
     }
+
+    createComment(body:string, userName:string, userId:string, movieId:string):Observable<Comment> {
+        return this.http.post<Comment>(COMMENTS_URL, {
+            body: body,
+            userName: userName,
+            userId: userId,
+            movieId: movieId
+        })
+    }
 }
+
