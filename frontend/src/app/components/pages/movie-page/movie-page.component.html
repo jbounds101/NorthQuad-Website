@@ -1,5 +1,3 @@
-<p>movie-page works!</p>
-
 <div *ngIf="movie" class="container">
     <img [src]="movie.imagePath" [alt]="movie.name"/>
   
@@ -8,7 +6,25 @@
         <span class="name">
           {{movie.name}}
         </span>
-      </div>
+        <div class = info>
+          <div class="release-year">
+            {{movie.releaseYear}},
+          </div>
+          <div class="director">
+            {{movie.director}}
+          </div>
+        </div>
 
+        <div class="box-office">
+          Box-office: ${{movie.boxOffice.toLocaleString('en', {useGrouping:true})}}
+        </div>
+        <div class="Running time">
+          Run time: {{movie.runningTime}} minutes
+        </div>
+      </div>  
     </div>
+  </div>
+
+  <div class="comments">
+    <app-comments></app-comments>
   </div>

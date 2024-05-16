@@ -37,4 +37,11 @@ export class LoginPageComponent implements OnInit {
             this.router.navigateByUrl(this.returnUrl);
         });
     }
+
+    fillDebugValues() {
+        this.loginForm.setValue({
+          email: 'jane@gmail.com',
+          password: '12345'
+        });
+    }
 }

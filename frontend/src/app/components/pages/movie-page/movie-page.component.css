@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 1rem;
+}
+
+img{
+    border-radius: 3rem;
+    object-fit: cover;
+    height: 35rem;
+    margin: 2rem;
+}
+
+.name {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.details .info {
+    font-size: 1.2rem;
+    font-weight:lighter;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.details .release-year,
+.info .director {
+  margin-right: 0.45rem;
+}

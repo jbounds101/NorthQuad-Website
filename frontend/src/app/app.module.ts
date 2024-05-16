@@ -9,6 +9,9 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MoviePageComponent } from './components/pages/movie-page/movie-page.component';
+import { CommentsComponent } from './components/partials/comments/comments.component';
+import { CommentComponent } from './components/partials/comment/comment.component';
+import { CommentFormComponent } from './components/partials/comment-form/comment-form.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { MoviePageComponent } from './components/pages/movie-page/movie-page.com
     HomePageComponent,
     HeaderComponent,
     LoginPageComponent,
-    MoviePageComponent
+    MoviePageComponent,
+    CommentsComponent,
+    CommentComponent,
+    CommentFormComponent
   ],
   imports: [
     BrowserModule,

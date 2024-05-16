@@ -10,6 +10,7 @@ import { MovieService } from '../../../services/movie.service';
 })
 export class MoviePageComponent {
     movie!: Movie;
+    
     constructor(activatedRoute:ActivatedRoute, movieService:MovieService, private router:Router) {
         activatedRoute.params.subscribe((params) => {
             if (params['id']) {

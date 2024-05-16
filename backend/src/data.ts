@@ -84,15 +84,41 @@ export const MOVIES: any[] = [
 
 export const SAMPLE_USERS: any[] = [
     {
+      id: "1",
       name: "John Doe",
       email: "john@gmail.com",
       password: "12345",
       isAdmin: true,
     },
     {
+      id: "2",
       name: "Jane Doe",
       email: "jane@gmail.com",
       password: "12345",
       isAdmin: false,
     },
 ];
+
+export const COMMENTS: any[] = [
+  {
+    "id": "1",
+    "body": "I like A New Hope",
+    "userName": "John Doe",
+    "userId": "1",
+    "movieId": "1"
+  }, 
+  {
+    "id": "2",
+    "body": "I don't like A New Hope at all!!!",
+    "userName": "Jane Doe",
+    "userId": "2",
+    "movieId": "1"
+  },
+  {
+    "id": "3",
+    "body": "Fills me with anguish and disgust.",
+    "userName": "Jane Doe",
+    "userId": "2",
+    "movieId": "9"
+  }
+]

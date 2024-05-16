@@ -1,0 +1,17 @@
+<div class="comment">
+  <div class="comment-image-container">
+    <img src="/assets/user-icon.png" [alt]="comment.userName"/>
+  </div>
+
+  <div class="comment-right-part">
+    <div class="comment-username">
+      <span [ngClass]="{ 'auth-username': isUserAuth }">
+        {{comment.userName}}
+      </span>
+    </div>
+    <div class="comment-text">
+      {{comment.body}}
+    </div>
+  </div>
+ 
+</div>
