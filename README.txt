@@ -1,3 +1,5 @@
+Install node.js (https://nodejs.org/en) or "sudo apt install npm"
+
 To setup the application (I use bash for all of the scripts):
 
 "cd backend", then run "npm install", to run the backend server, do "npm start" inside the backend folder
@@ -5,3 +7,5 @@ To setup the application (I use bash for all of the scripts):
 
 The backend API is hosted on localhost:5000
 The frontend client is connected on localhost:4200
+
+All of the relevant data for logins is stored inside backend/src/data.ts
