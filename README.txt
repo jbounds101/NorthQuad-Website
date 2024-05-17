@@ -1,4 +1,5 @@
 Install node.js (https://nodejs.org/en) or "sudo apt install npm"
+Install Angular CLI "npm install -g @angular/cli"
 
 To setup the application (I use bash for all of the scripts):
 
