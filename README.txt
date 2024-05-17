@@ -8,4 +8,4 @@ To setup the application (I use bash for all of the scripts):
 The backend API is hosted on localhost:5000
 The frontend client is connected on localhost:4200
 
-All of the relevant data for logins is stored inside backend/src/data.ts
+All of the relevant data for logins are stored inside backend/src/data.ts
