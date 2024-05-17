@@ -12,6 +12,7 @@ import { MoviePageComponent } from './components/pages/movie-page/movie-page.com
 import { CommentsComponent } from './components/partials/comments/comments.component';
 import { CommentComponent } from './components/partials/comment/comment.component';
 import { CommentFormComponent } from './components/partials/comment-form/comment-form.component';
+import { ProfilePageComponent } from './components/pages/profile-page/profile-page.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CommentFormComponent } from './components/partials/comment-form/comment
     MoviePageComponent,
     CommentsComponent,
     CommentComponent,
-    CommentFormComponent
+    CommentFormComponent,
+    ProfilePageComponent
   ],
   imports: [
     BrowserModule,

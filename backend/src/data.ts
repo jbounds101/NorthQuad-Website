@@ -80,6 +80,24 @@ export const dataMovies: any[] = [
     runningTime: 142,
     imagePath: 'assets/star-wars-9.jpg',
   },
+  {
+    id: '10',
+    name: 'Solo: A Star Wars Story',
+    releaseYear: 2018,
+    director: 'Ron Howard',
+    boxOffice: 392200192,
+    runningTime: 135,
+    imagePath: 'assets/star-wars-10.jpg',
+  },
+  {
+    id: '11',
+    name: 'Rogue One: A Star Wars Story',
+    releaseYear: 2016,
+    director: 'Gareth Edwards',
+    boxOffice: 1058192433,
+    runningTime: 133,
+    imagePath: 'assets/star-wars-11.jpg',
+  }
 ];
 
 export const dataUsers: any[] = [
@@ -97,31 +115,64 @@ export const dataUsers: any[] = [
     password: "12345",
     isAdmin: false,
   },
+  {
+    id: "3",
+    name: "Alice Smith",
+    email: "alice@gmail.com",
+    password: "12345",
+    isAdmin: false,
+  },
+  {
+    id: "4",
+    name: "Bob Johnson",
+    email: "bob@gmail.com",
+    password: "12345",
+    isAdmin: false,
+  }
 ];
 
 export const dataComments: any[] = [
-  {
-    id: "1",
-    body: "I like A New Hope",
-    userName: "John Doe",
-    userId: "1",
-    movieId: "1"
-  }, 
-  {
-    id: "2",
-    body: "I don't like A New Hope at all!!!",
-    userName: "Jane Doe",
-    userId: "2",
-    movieId: "1"
-  },
-  {
-    id: "3",
-    body: "Fills me with anguish and disgust",
-    userName: "Jane Doe",
-    userId: "2",
-    movieId: "9"
-  }
-]
+  { id: "1", body: "I like A New Hope", userName: "John Doe", userId: "1", movieId: "1" },
+  { id: "2", body: "I don't like A New Hope at all!!!", userName: "Jane Doe", userId: "2", movieId: "1" },
+  { id: "3", body: "Fills me with anguish and disgust", userName: "Jane Doe", userId: "2", movieId: "9" },
+  { id: "4", body: "Amazing movie!", userName: "Alice Smith", userId: "3", movieId: "2" },
+  { id: "5", body: "Not my favorite.", userName: "Bob Johnson", userId: "4", movieId: "3" },
+  { id: "6", body: "Great special effects.", userName: "Alice Smith", userId: "3", movieId: "4" },
+  { id: "7", body: "A classic!", userName: "John Doe", userId: "1", movieId: "5" },
+  { id: "8", body: "Could be better.", userName: "Jane Doe", userId: "2", movieId: "6" },
+  { id: "9", body: "Loved the storyline.", userName: "Bob Johnson", userId: "4", movieId: "7" },
+  { id: "10", body: "Too long for my taste. I found some scenes dragging on unnecessarily, which took away from the overall enjoyment. However, there were moments of brilliance that kept me engaged.", userName: "Alice Smith", userId: "3", movieId: "8" },
+  { id: "11", body: "Best movie ever! It's a cinematic masterpiece that transcends genres and captivates the audience from start to finish. Every aspect, from the acting to the visual effects, is flawlessly executed.", userName: "John Doe", userId: "1", movieId: "9" },
+  { id: "12", body: "Didn't like the ending.", userName: "Jane Doe", userId: "2", movieId: "1" },
+  { id: "13", body: "Fantastic visuals.", userName: "Bob Johnson", userId: "4", movieId: "2" },
+  { id: "14", body: "The acting was subpar.", userName: "Alice Smith", userId: "3", movieId: "3" },
+  { id: "15", body: "A thrilling ride!", userName: "John Doe", userId: "1", movieId: "4" },
+  { id: "16", body: "The music was great.", userName: "Jane Doe", userId: "2", movieId: "5" },
+  { id: "17", body: "Didn't live up to the hype.", userName: "Bob Johnson", userId: "4", movieId: "6" },
+  { id: "18", body: "A wonderful film!", userName: "Alice Smith", userId: "3", movieId: "7" },
+  { id: "19", body: "I found it boring.", userName: "John Doe", userId: "1", movieId: "8" },
+  { id: "20", body: "Very very bad.", userName: "Jane Doe", userId: "2", movieId: "9" },
+  { id: "21", body: "Would watch again.", userName: "Bob Johnson", userId: "4", movieId: "1" },
+  { id: "22", body: "Not worth the time.", userName: "Alice Smith", userId: "3", movieId: "2" },
+  { id: "23", body: "An emotional rollercoaster.", userName: "John Doe", userId: "1", movieId: "3" },
+  { id: "24", body: "The script was weak.", userName: "Jane Doe", userId: "2", movieId: "4" },
+  { id: "25", body: "Visually stunning!", userName: "Bob Johnson", userId: "4", movieId: "5" },
+  { id: "26", body: "The dialogue was awkward.", userName: "Alice Smith", userId: "3", movieId: "6" },
+  { id: "27", body: "A visual masterpiece.", userName: "John Doe", userId: "1", movieId: "7" },
+  { id: "28", body: "Unbelievably good.", userName: "Jane Doe", userId: "2", movieId: "8" },
+  { id: "29", body: "Pretty average.", userName: "Bob Johnson", userId: "4", movieId: "9" },
+  { id: "30", body: "I didn't get it.", userName: "Alice Smith", userId: "3", movieId: "1" },
+  { id: "31", body: "Superb acting.", userName: "John Doe", userId: "1", movieId: "2" },
+  { id: "32", body: "Mediocre at best.", userName: "Jane Doe", userId: "2", movieId: "3" },
+  { id: "33", body: "An instant classic.", userName: "Bob Johnson", userId: "4", movieId: "4" },
+  { id: "34", body: "I was disappointed.", userName: "Alice Smith", userId: "3", movieId: "5" },
+  { id: "35", body: "Totally awesome.", userName: "John Doe", userId: "1", movieId: "6" },
+  { id: "36", body: "I loved every minute.", userName: "Jane Doe", userId: "2", movieId: "7" },
+  { id: "37", body: "Not my type of movie.", userName: "Bob Johnson", userId: "4", movieId: "8" },
+  { id: "38", body: "A bit overrated.", userName: "Alice Smith", userId: "3", movieId: "9" },
+  { id: "39", body: "An unexpected delight.", userName: "John Doe", userId: "1", movieId: "10" },
+  { id: "40", body: "Underwhelming.", userName: "Jane Doe", userId: "2", movieId: "11" }
+];
 
 export function findHighestId(data: any[]): number {
   let highestId = 0;

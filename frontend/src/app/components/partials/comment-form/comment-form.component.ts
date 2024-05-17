@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Comment } from '../../../shared/models/Comment';
 
 @Component({
   selector: 'app-comment-form',
@@ -12,6 +13,8 @@ export class CommentFormComponent implements OnInit {
     @Input() initialText:string = '';
 
     @Output() handleSubmit = new EventEmitter<string>(); // The output of the textbox
+    @Output() handleCancel = new EventEmitter<void>();
+    @Output() setActiveComment = new EventEmitter<Comment | null>();
 
     form!:FormGroup;
 
@@ -20,10 +23,12 @@ export class CommentFormComponent implements OnInit {
     ngOnInit(): void {
         this.form = this.formBuilder.group({
             title: [this.initialText, Validators.required]
-        })
+        });
     }
 
     submit(): void{
         this.handleSubmit.emit(this.form.value.title);
+        this.form.reset();
     }
+
 }

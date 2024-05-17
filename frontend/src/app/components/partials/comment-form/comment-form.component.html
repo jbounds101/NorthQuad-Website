@@ -1,9 +1,12 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
   <textarea class="comment-form-textarea" formControlName="title"></textarea>
-  <button class="comment-form-button" type="submit" [disabled]="form.invalid">
+  <button class="comment-form-button" type="submit" [disabled]="form.invalid || this.initialText === this.form.value.title">
     {{submitLabel}}
   </button>
-  <button *ngIf="hasCancelButton" type="button" class="comment-form-button comment-form-cancel-button">
+  <button *ngIf="hasCancelButton" 
+    type="button" 
+    class="comment-form-button comment-form-cancel-button" 
+    (click)="handleCancel.emit()">
     Cancel
   </button>
 </form>

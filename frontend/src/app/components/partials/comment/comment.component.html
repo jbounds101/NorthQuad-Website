@@ -9,9 +9,19 @@
         {{comment.userName}}
       </span>
     </div>
-    <div class="comment-text">
+    <div class="comment-text" *ngIf="!isActiveComment()">
       {{comment.body}}
     </div>
+    <app-comment-form *ngIf="isActiveComment()"
+      submitLabel="Update"
+      [hasCancelButton]="true"
+      [initialText]="comment.body"
+      (handleSubmit)="updateComment.emit({text: $event, commentId: comment.id})"
+      (handleCancel)="setActiveComment.emit(null)">
+    </app-comment-form>
+    <div class="comment-actions">
+      <div *ngIf="isUserAuth" class = "comment-action" (click)="setActiveComment.emit(comment)">Edit</div>
+      <div *ngIf="isUserAuth" class = "comment-action" (click)="deleteComment.emit(comment.id.toString())">Delete</div>
+    </div>
   </div>
- 
 </div>

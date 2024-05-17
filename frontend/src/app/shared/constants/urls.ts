@@ -6,3 +6,4 @@ export const USER_LOGIN_URL = BASE_URL + '/api/users/login'
 export const COMMENTS_URL = BASE_URL + '/api/comments';
 export const COMMENTS_URL_BY_MOVIE_ID = COMMENTS_URL + '/movies/';
 export const COMMENTS_URL_BY_USER_ID = COMMENTS_URL + '/users/';
+export const UPDATE_COMMENT_URL = COMMENTS_URL + '/';

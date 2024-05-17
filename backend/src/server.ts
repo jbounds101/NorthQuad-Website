@@ -49,6 +49,10 @@ const generateTokenResponse = (user:any) => {
 // ---
 
 // Comments
+function findCommentById(id:string) {
+    return dataComments.find(comment => comment.id === id);
+}
+
 app.get('/api/comments', (req, res) => {
     res.send(dataComments);
 });
@@ -66,11 +70,11 @@ app.get('/api/comments/users/:userId', (req, res) => {
 });
 
 app.post('/api/comments', (req, res) => {
-    // Here would be a good place rto validate the request with the userToken
+    // Here would be a good place to validate the request with the userToken
     const {body, userName, userId, movieId} = req.body;
     highestCommentId++;
     const newComment = {
-        id: highestCommentId,
+        id: highestCommentId.toString(),
         body: body,
         userName: userName,
         userId: userId,
@@ -79,6 +83,33 @@ app.post('/api/comments', (req, res) => {
     dataComments.push(newComment);
     res.status(201).send(newComment);
 });
+
+app.patch('/api/comments/:commentId', (req, res) => {
+    // Again, this should be checked with some sort of verification
+    const id = req.params.commentId;
+    const {body} = req.body;
+    let comment = findCommentById(id);
+    if (comment) {
+        comment.body = body;
+        res.send(comment);
+    } else {
+        res.status(400).json({ error: 'Comment cannot be found!'});
+    }
+});
+
+app.delete('/api/comments/:commentId', (req, res) => {
+    // Again, this should be checked with some sort of verification
+    const id = req.params.commentId;
+    let comment = findCommentById(id);
+    if (comment) {
+        const index = dataComments.findIndex(comment => comment.id === id);
+        dataComments.splice(index, 1);
+        res.status(200).json({ message: 'Comment deleted successfully!' });
+    } else {
+        res.status(400).json({ error: 'Comment cannot be found!' });
+    }
+});
+
 // ---
 
 const PORT = 5000;

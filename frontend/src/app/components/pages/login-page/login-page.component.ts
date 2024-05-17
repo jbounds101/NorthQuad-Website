@@ -40,7 +40,7 @@ export class LoginPageComponent implements OnInit {
 
     fillDebugValues() {
         this.loginForm.setValue({
-          email: 'jane@gmail.com',
+          email: 'john@gmail.com',
           password: '12345'
         });
     }
